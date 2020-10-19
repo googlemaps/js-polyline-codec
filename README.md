@@ -24,7 +24,7 @@ Available via npm as the package [@googlemaps/polyline-codec](https://www.npmjs.
 
 ## Documentation
 
-The reference documentation can be found at this [link](https://googlemaps.github.io/js-polyline/docs/index.html).
+The reference documentation can be found at this [link](https://googlemaps.github.io/js-polyline-codec/index.html).
 
 ## Example
 
