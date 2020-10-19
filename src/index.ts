@@ -31,7 +31,7 @@ export type LatLngTuple = number[];
  * See {@link https://developers.google.com/maps/documentation/utilities/polylinealgorithm}
  *
  *  #### Example
- * 
+ *
  * ```js
  * import { decode } from "@googlemaps/polyline-codec";
  *
@@ -99,7 +99,7 @@ export const decode = function (
  * See {@link https://developers.google.com/maps/documentation/utilities/polylinealgorithm}
  *
  * #### Example
- * 
+ *
  * ```js
  * import { encode } from "@googlemaps/polyline-codec";
  *
