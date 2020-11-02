@@ -718,6 +718,8 @@ var MarkerClusterer = (function (exports) {
 	exports.encode = encode;
 	exports.polylineEncodeLine = polylineEncodeLine;
 
+	Object.defineProperty(exports, '__esModule', { value: true });
+
 	return exports;
 
 }({}));
