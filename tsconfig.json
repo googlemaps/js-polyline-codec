@@ -6,7 +6,7 @@
     "outDir": "./dist",
     "sourceMap": true,
     "esModuleInterop": true,
-    "lib": ["ESNext"]
+    "lib": ["ESNext", "DOM"]
   },
   "include": ["src/**/*"],
   "exclude": ["**/*.test.ts", "node_modules"]
