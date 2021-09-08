@@ -22,4 +22,5 @@ jobs:
       - run: npm i
       - run: npm run lint
       - run: npm test
+      - run: npm run docs
       - uses: codecov/codecov-action@v1
