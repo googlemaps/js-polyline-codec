@@ -178,7 +178,7 @@ var MarkerClusterer = (function (exports) {
 	  (module.exports = function (key, value) {
 	    return sharedStore[key] || (sharedStore[key] = value !== undefined ? value : {});
 	  })('versions', []).push({
-	    version: '3.17.2',
+	    version: '3.17.3',
 	    mode: 'global',
 	    copyright: '© 2021 Denis Pushkarev (zloirock.ru)'
 	  });
