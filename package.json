@@ -25,7 +25,7 @@
     "dist/**"
   ],
   "scripts": {
-    "docs": "typedoc src/index.ts && cp -r dist docs/dist && cp -r examples docs/examples",
+    "docs": "typedoc src/index.ts",
     "format": "prettier *.json *.js --write && eslint src/*.ts --fix",
     "lint": "eslint src/*.ts",
     "prepare": "rm -rf dist && rollup -c",
