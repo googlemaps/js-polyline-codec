@@ -28,7 +28,7 @@
     "docs": "typedoc src/index.ts",
     "format": "prettier *.json *.js --write && eslint src/*.ts --fix",
     "lint": "eslint src/*.ts",
-    "prepare": "rollup -c",
+    "prepare": "rm -rf dist && rollup -c",
     "test": "jest src/*"
   },
   "devDependencies": {
