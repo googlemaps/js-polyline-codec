@@ -52,7 +52,7 @@ export default [
     output: {
       file: "dist/index.dev.js",
       format: "iife",
-      name: "MarkerClusterer",
+      name: "polyline",
     },
   },
   {
