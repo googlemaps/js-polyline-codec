@@ -23,7 +23,7 @@ export interface LatLng {
 /**
  * Array with lat and lng elements.
  */
-export type LatLngTuple = number[];
+export type LatLngTuple = [number, number];
 
 /**
  * Decodes an encoded path string into a sequence of LatLngs.
@@ -113,7 +113,7 @@ export const decode = function (
  * ```
  */
 export const encode = function (
-  path: (LatLng | LatLngTuple)[],
+  path: (number[] | LatLng | LatLngTuple)[],
   precision = 5
 ): string {
   const factor = Math.pow(10, precision);
@@ -138,8 +138,8 @@ export const encode = function (
  * @ignore
  */
 export const polylineEncodeLine = function (
-  array: (LatLng | LatLngTuple)[],
-  transform: (latLng: LatLng | LatLngTuple) => [number, number]
+  array: (number[] | LatLng | LatLngTuple)[],
+  transform: (latLng: number[] | LatLng | LatLngTuple) => [number, number]
 ): string {
   const v: string[] = [];
   let start = [0, 0];
