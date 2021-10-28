@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { decode, encode } from "./index";
+import {decode, encode} from './index';
 
 const CASES = {
   DEFAULT: [
@@ -24,7 +24,7 @@ const CASES = {
   ],
   DEFAULT_MIXED: [
     [38.5, -120.2],
-    { lat: 40.7, lng: -120.95 },
+    {lat: 40.7, lng: -120.95},
     [43.252, -126.453],
   ],
   DEFAULT_ROUNDED: [
@@ -53,79 +53,79 @@ const CASES = {
   ],
 };
 
-describe("decode", () => {
-  test("decodes to an empty array", () => {
-    expect(decode("")).toEqual([]);
+describe('decode', () => {
+  test('decodes to an empty array', () => {
+    expect(decode('')).toEqual([]);
   });
 
-  test("decodes a string into an array of lat lng pairs", () => {
-    expect(decode("_p~iF~ps|U_ulLnnqC_mqNvxq`@")).toEqual(CASES.DEFAULT);
+  test('decodes a string into an array of lat lng pairs', () => {
+    expect(decode('_p~iF~ps|U_ulLnnqC_mqNvxq`@')).toEqual(CASES.DEFAULT);
   });
 
-  test("decodes with a custom precision", () => {
-    expect(decode("_izlhA~rlgdF_{geC~ywl@_kwzCn`{nI", 6)).toEqual(
+  test('decodes with a custom precision', () => {
+    expect(decode('_izlhA~rlgdF_{geC~ywl@_kwzCn`{nI', 6)).toEqual(
       CASES.DEFAULT
     );
   });
 
-  test("decodes with precision 0", () => {
-    expect(decode("mAnFC@CH", 0)).toEqual(CASES.DEFAULT_ROUNDED);
+  test('decodes with precision 0', () => {
+    expect(decode('mAnFC@CH', 0)).toEqual(CASES.DEFAULT_ROUNDED);
   });
 });
 
-describe("roundtrip", () => {
-  test("roundrip", () => {
+describe('roundtrip', () => {
+  test('roundrip', () => {
     const encoded =
-      "gcneIpgxzRcDnBoBlEHzKjBbHlG`@`IkDxIiKhKoMaLwTwHeIqHuAyGXeB~Ew@fFjAtIzExF";
+      'gcneIpgxzRcDnBoBlEHzKjBbHlG`@`IkDxIiKhKoMaLwTwHeIqHuAyGXeB~Ew@fFjAtIzExF';
     const decoded = decode(encoded, 5);
 
     expect(decoded).toMatchSnapshot();
     expect(encode(decoded, 5)).toEqual(encoded);
   });
 
-  test("feed encode into decode and check if the result is the same as the input", () => {
+  test('feed encode into decode and check if the result is the same as the input', () => {
     expect(decode(encode(CASES.SLASHES))).toEqual(CASES.SLASHES);
   });
 
-  test("feed decode into encode and check if the result is the same as the input", () => {
-    expect(encode(decode("_chxEn`zvN\\\\]]"))).toEqual("_chxEn`zvN\\\\]]");
+  test('feed decode into encode and check if the result is the same as the input', () => {
+    expect(encode(decode('_chxEn`zvN\\\\]]'))).toEqual('_chxEn`zvN\\\\]]');
   });
 });
 
-describe("encode", () => {
-  test("encodes an empty Array", () => {
-    expect(encode([])).toEqual("");
+describe('encode', () => {
+  test('encodes an empty Array', () => {
+    expect(encode([])).toEqual('');
   });
 
-  test("encodes an Array of lat/lon pairs into a String", () => {
-    expect(encode(CASES.DEFAULT)).toEqual("_p~iF~ps|U_ulLnnqC_mqNvxq`@");
+  test('encodes an Array of lat/lon pairs into a String', () => {
+    expect(encode(CASES.DEFAULT)).toEqual('_p~iF~ps|U_ulLnnqC_mqNvxq`@');
   });
 
-  test("encodes with proper rounding", () => {
-    expect(encode(CASES.ROUNDING)).toEqual("?A?@");
+  test('encodes with proper rounding', () => {
+    expect(encode(CASES.ROUNDING)).toEqual('?A?@');
   });
 
-  test("encodes array having lat lng objects", () => {
-    expect(encode(CASES.DEFAULT_MIXED)).toEqual("_p~iF~ps|U_ulLnnqC_mqNvxq`@");
+  test('encodes array having lat lng objects', () => {
+    expect(encode(CASES.DEFAULT_MIXED)).toEqual('_p~iF~ps|U_ulLnnqC_mqNvxq`@');
   });
 
-  test("encodes with proper negative rounding", () => {
-    expect(encode(CASES.NEGATIVE)).toEqual("ss`{E~kbkTeAQw@J");
+  test('encodes with proper negative rounding', () => {
+    expect(encode(CASES.NEGATIVE)).toEqual('ss`{E~kbkTeAQw@J');
   });
 
-  test("encodes with a custom precision", () => {
+  test('encodes with a custom precision', () => {
     expect(encode(CASES.DEFAULT, 6)).toEqual(
-      "_izlhA~rlgdF_{geC~ywl@_kwzCn`{nI"
+      '_izlhA~rlgdF_{geC~ywl@_kwzCn`{nI'
     );
   });
 
-  test("encodes with precision 0", () => {
-    expect(encode(CASES.DEFAULT, 0)).toEqual("mAnFC@CH");
+  test('encodes with precision 0', () => {
+    expect(encode(CASES.DEFAULT, 0)).toEqual('mAnFC@CH');
   });
 
-  test("encodes negative values correctly", () => {
+  test('encodes negative values correctly', () => {
     expect(
-      decode(encode([{ lng: -107.3741825, lat: 0 }], 7), 7)[0][1]
+      decode(encode([{lng: -107.3741825, lat: 0}], 7), 7)[0][1]
     ).toBeLessThan(0);
   });
 });

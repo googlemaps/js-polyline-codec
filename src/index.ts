@@ -155,7 +155,7 @@ export const polylineEncodeLine = function (
     start = end;
   }
 
-  return v.join("");
+  return v.join('');
 };
 
 /**
