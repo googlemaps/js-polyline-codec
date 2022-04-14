@@ -1,6 +1,6 @@
 {
   "name": "@googlemaps/polyline-codec",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Encode and decode polyines in Nodejs or the browser using this package.",
   "keywords": [
     "google",
