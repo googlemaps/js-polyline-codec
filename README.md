@@ -1,7 +1,7 @@
 # Google Maps JavaScript Polyline Encoding
 
 [![npm](https://img.shields.io/npm/v/@googlemaps/polyline-codec)](https://www.npmjs.com/package/@googlemaps/polyline-codec)
-![Build](https://github.com/googlemaps/js-polyline-codec/workflows/Build/badge.svg)
+![Build](https://github.com/googlemaps/js-polyline-codec/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/js-polyline-codec/workflows/Release/badge.svg)
 [![codecov](https://codecov.io/gh/googlemaps/js-polyline-codec/branch/main/graph/badge.svg)](https://codecov.io/gh/googlemaps/js-polyline-codec)
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/js-polyline-codec?color=green)
